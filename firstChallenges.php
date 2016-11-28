@@ -1,3 +1,12 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Did this work?</title>
+</head>
+<body>
+ do I see this on the browser?
+</body>
+</html>
 <?php 
 
 //Buying a car:
