@@ -27,3 +27,23 @@ SELECT * FROM city;
 Query all columns for a city in CITY with the ID 1661
 
 SELECT * FROM city WHERE id = 1661;
+
+#Japanese Cities Attributes
+Query all attributes of every Japanese city in the CITY table. The COUNTRYCODE for Japan is JPN.
+
+SELECT * FROM city WHERE countrycode = 'JPN';
+
+#Query the names of all the Japanese cities in the CITY table. The COUNTRYCODE for Japan is JPN.
+
+SELECT name FROM city WHERE countrycode = "JPN";
+
+#Weather Observation Station 1
+Query a list of CITY and STATE from the STATION table.
+
+SELECT city, state FROM station;
+
+
+#Weather Observation 3
+Query a list of CITY names from STATION with even ID numbers only. You may print the results in any order, but must exclude duplicates from your answer.
+
+SELECT DISTINCT city FROM station WHERE id % 2 = 0 
