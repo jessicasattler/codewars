@@ -15,3 +15,10 @@ Query the names of all American cities in CITY with populations larger than 1200
 
 Solution:
 SELECT name FROM city WHERE countrycode = 'USA' AND population > 120000;
+
+#Select All
+Query all columns (attributes) for every row in the CITY table.
+
+Solution:
+
+SELECT * FROM city;
