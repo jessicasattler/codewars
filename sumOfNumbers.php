@@ -22,28 +22,24 @@
 //Output: 0 = 0
 
 
-
 class SequenceSum {
   public function showSequence($count) {
   	$sequenceArray = [];
-    $number = 0;
   	
   	 if($count<0)
     {
-      return $count < 0;
+      return $count."<0";
     }
 
     if($count === 0)
     {
-    	return $count == 0;
+    	return $count."=0";
     }
-     for($i = 1; $i <= $count; $i += 1)
+     for($i = 0; $i <= $count; $i += 1)
      {
    
+        $sequenceArray[$i] = $i;
       
-     	    $sequenceArray[$i] = array_sum($sequenceArray)+ $number;
-        
-          $number += 1;
      }
 
      $total = array_sum($sequenceArray); 
@@ -51,14 +47,10 @@ class SequenceSum {
      
      $sequenceArrayToString = implode('+', $sequenceArray);
      
-     var_dump($sequenceArrayToString);
 
      return $sequenceArrayToString." = ".$total;
 
-     //  while
+   
   }
 }
-
-
-
  ?>
