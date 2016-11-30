@@ -47,3 +47,10 @@ SELECT city, state FROM station;
 Query a list of CITY names from STATION with even ID numbers only. You may print the results in any order, but must exclude duplicates from your answer.
 
 SELECT DISTINCT city FROM station WHERE id % 2 = 0 
+
+#Weather Observation Station 4 
+Let  be the number of CITY entries in STATION, and let  be the number of distinct CITY names in STATION; query the value of  from STATION. In other words, find the difference between the total number of CITY entries in the table and the number of distinct CITY entries in the table.
+
+AKA Find the difference between the number of city entrees and the number of unique city entries
+
+SELECT COUNT(city) - COUNT(DISTINCT city) FROM station;
