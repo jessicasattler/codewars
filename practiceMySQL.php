@@ -54,3 +54,9 @@ Let  be the number of CITY entries in STATION, and let  be the number of distinc
 AKA Find the difference between the number of city entrees and the number of unique city entries
 
 SELECT COUNT(city) - COUNT(DISTINCT city) FROM station;
+
+#weather observation station 5
+select city, length(city) from station order by length(city) asc, city asc limit 1; select city, length(city) from station order by length(city) desc, city asc limit 1;
+
+SELECT city, CHAR_LENGTH(city) FROM station ORDER BY CHAR_LENGTH(city) asc, city asc limit 1; 
+SELECT city, CHAR_LENGTH(city) FROM station ORDER BY CHAR_LENGTH(city) desc, city asc limit 1;
