@@ -31,12 +31,15 @@
 
 
 function travel($r, $zipcode) {
+function travel($r, $zipcode) {
     if(!strpos($r,$zipcode))//if zipcode doesn't exist in list of clients, return "zipcode:/"
     {
       return "zipcode:/";
     }else{
       
     }
+    
+    return $zipcode.":".$street."/".$streetNumber;
 }
 
  ?>
