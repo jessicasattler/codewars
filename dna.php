@@ -2,37 +2,42 @@
 
 function DNA_strand($dna) {
 
-$dnaInitialArray = explode(",", $dna);
+$dnaInitialArray = str_split($dna);
 $dnaFinalArray = [];
 
-var_dump($dnaInitialArray);
 
+ 
 for($i=0;$i<sizeof($dnaInitialArray);$i+=1)
 {  
   if($dnaInitialArray[$i] == 'A')
   {
     $dnaFinalArray[$i] = 'T';
+    continue;      
   }
-    if($dnaInitialArray[$i] = 'T')
+    if($dnaInitialArray[$i] == 'T')
   {
-    $dnaFinalArray[$i] += 'A';
+    $dnaFinalArray[$i] = 'A';
+    continue;
   }
-    if($dnaInitialArray[$i] = 'C')
+    if($dnaInitialArray[$i] == 'C')
   {
     $dnaFinalArray[$i] = 'G';
+    continue;
   }
     if($dnaInitialArray[$i] == 'G')
   {
     $dnaFinalArray[$i] = 'C';
+    continue;
   }
   
 }
 
-var_dump($dnaFinalArray);
-$dnaFinal = implode(' ',$dnaFinalArray);
 
 
+$dnaFinal = implode('',$dnaFinalArray);
 
-return $dnaFinalArray;
+return $dnaFinal;
   
 }
+
+
