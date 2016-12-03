@@ -30,12 +30,17 @@
 // Note: You can see the list of all addresses and zipcodes in the test cases.
 function travel($r, $zipcode) {
     $street = "";
-    $streetNumber = "";
+    $streetNumber = "";    
     
-    
-    if(!strpos($r,$zipcode))//if zipcode doesn't exist in list of clients, return "zipcode:/"
+    if ($zipcode == NULL) {
+      return ":/";
+    }
+    if (strlen($zipcode) != 8){
+      return  "$zipcode:/";
+    }
+    if(strpos($r,$zipcode) === FALSE)//if zipcode doesn't exist in list of clients, return "zipcode:/"
     {
-      return "zipcode:/";
+      return "$zipcode:/";
     }
     $rArray = explode(",", $r);
     
@@ -53,18 +58,23 @@ function travel($r, $zipcode) {
         }
         $streetNumber = $streetNumber.",";
         
+        $cityAndStreets = substr($noZip, $i + 1);
+        
+       
+        $street = $street.$cityAndStreets.",";
 
       }
       
-      $streetNumber = rtrim($streetNumber, ",");
+        
       
       
     }
-    
+          $streetNumber = rtrim($streetNumber, ",");
+          $street = rtrim($street, ",");
       //extract the street(s) and street number(s) from the string ($r) and save them to 
       //variables: $street and $streetNumber
     
-    
+    echo $zipcode.":".$street."/".$streetNumber.PHP_EOL;
     return $zipcode.":".$street."/".$streetNumber;
 }
  ?>
