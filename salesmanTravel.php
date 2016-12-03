@@ -28,10 +28,9 @@
 
 // travel(r, "NY 5643") --> "NY 5643:/"
 // Note: You can see the list of all addresses and zipcodes in the test cases.
-
 function travel($r, $zipcode) {
-    $street;
-    $streetNumber;
+    $street = "";
+    $streetNumber = "";
     
     
     if(!strpos($r,$zipcode))//if zipcode doesn't exist in list of clients, return "zipcode:/"
@@ -45,8 +44,21 @@ function travel($r, $zipcode) {
       if(strpos($address,$zipcode))
       {
         $noZip = substr($address, 0, strpos($address, $zipcode)-1);
-        var_dump($noZip);
+        $i = 0;
+        while(ctype_digit($noZip[$i]))
+        {
+          $streetNumber = $streetNumber.$noZip[$i];
+          $i+=1;
+          
+        }
+        $streetNumber = $streetNumber.",";
+        
+
       }
+      
+      $streetNumber = rtrim($streetNumber, ",");
+      
+      
     }
     
       //extract the street(s) and street number(s) from the string ($r) and save them to 
@@ -55,5 +67,4 @@ function travel($r, $zipcode) {
     
     return $zipcode.":".$street."/".$streetNumber;
 }
-
  ?>
