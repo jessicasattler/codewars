@@ -60,3 +60,8 @@ select city, length(city) from station order by length(city) asc, city asc limit
 
 SELECT city, CHAR_LENGTH(city) FROM station ORDER BY CHAR_LENGTH(city) asc, city asc limit 1; 
 SELECT city, CHAR_LENGTH(city) FROM station ORDER BY CHAR_LENGTH(city) desc, city asc limit 1;
+
+#weather observation station 6
+Query the list of CITY names starting with vowels (a, e, i, o, u) from STATION. Your result cannot contain duplicates.
+
+SELECT DISTINCT city FROM station WHERE city LIKE 'a%' OR city LIKE 'e%' OR city LIKE 'i%' OR city LIKE 'o%'OR city LIKE'u%';
