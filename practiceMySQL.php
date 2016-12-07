@@ -106,3 +106,25 @@ FROM Country
 INNER JOIN City
     ON Country.Code = City.CountryCode
 WHERE Country.Continent='Asia';
+
+#Basic Joins African Cities
+Given the CITY and COUNTRY tables, query the names of all cities where the CONTINENT is 'Africa'.
+
+Note: CITY.CountryCode and COUNTRY.Code are matching key columns.
+
+SELECT City.name
+FROM Country
+INNER JOIN City
+  ON Country.code = City.CountryCode
+WHERE Country.Continent = 'Africa'
+
+#Basic Joins Average Population of Each Continent
+Given the CITY and COUNTRY tables, query the names of all the continents (COUNTRY.Continent) and their respective average city populations (CITY.Population) rounded down to the nearest integer.
+
+Note: CITY.CountryCode and COUNTRY.Code are matching key columns. Do not include continents without cities in your output.
+
+SELECT country.continent, FLOOR(AVG(city.population))
+FROM Country
+INNER JOIN City
+    ON city.countrycode = country.code
+GROUP BY country.continent;
