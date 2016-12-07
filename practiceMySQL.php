@@ -90,3 +90,19 @@ SELECT DISTINCT city FROM station WHERE city NOT LIKE '%a' AND city NOT LIKE '%e
 Query the list of CITY names from STATION that either do not start with vowels or do not end with vowels. Your result cannot contain duplicates.
 
 SELECT DISTINCT city FROM station WHERE NOT substr(city,1,1) in ('A','E','I','O','U') OR NOT substr(city, -1,1) in ('A','E','I','O','U');
+
+#weather observation station 12
+Query the list of CITY names from STATION that do not start with vowels and do not end with vowels. Your result cannot contain duplicates.
+
+SELECT DISTINCT city FROM station WHERE NOT substr(city,1,1) in ('A','E','I','O','U') AND NOT substr(city, -1,1) in ('A','E','I','O','U');
+
+#Basic Joins- Asian Population
+Given the CITY and COUNTRY tables, query the sum of the populations of all cities where the CONTINENT is 'Asia'.
+
+Note: CITY.CountryCode and COUNTRY.Code are matching key columns.
+
+SELECT SUM(City.population)
+FROM Country
+INNER JOIN City
+    ON Country.Code = City.CountryCode
+WHERE Country.Continent='Asia';
